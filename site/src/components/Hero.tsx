@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { img } from "@/lib/config";
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/photos/0517FD2D-6691-4F68-9FB6-302E4497222E.webp"
+          src={img("/photos/0517FD2D-6691-4F68-9FB6-302E4497222E.webp")}
           alt="Reaper fighter in guard stance"
           fill
           priority

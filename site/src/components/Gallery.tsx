@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { img } from "@/lib/config";
 import AnimatedSection from "./AnimatedSection";
 
 const galleryItems = [
@@ -89,7 +90,7 @@ function GalleryImage({ item }: { item: GalleryItem }) {
   return (
     <>
       <Image
-        src={item.src}
+        src={img(item.src)}
         alt={item.alt}
         fill
         className={`object-cover ${item.objectPos ?? ""} group-hover:scale-105 transition-transform duration-700`}

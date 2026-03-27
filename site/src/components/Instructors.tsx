@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { img } from "@/lib/config";
 import AnimatedSection from "./AnimatedSection";
 
 const instructors = [
@@ -61,7 +62,7 @@ export default function Instructors() {
             >
               <div className="relative aspect-[3/4] bg-smoke/50 border border-bone/5 overflow-hidden group-hover:border-blood/30 transition-all duration-500">
                 <Image
-                  src={instructor.photo}
+                  src={img(instructor.photo)}
                   alt={instructor.name}
                   fill
                   className={`object-cover ${instructor.objectPos ?? "object-top"} group-hover:scale-105 transition-transform duration-700`}

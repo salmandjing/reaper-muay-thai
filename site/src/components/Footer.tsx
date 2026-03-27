@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { img } from "@/lib/config";
 
 const socials = [
   {
@@ -40,7 +41,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/photos/logo.png"
+              src={img("/photos/logo.png")}
               alt="Reaper"
               width={140}
               height={40}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { img } from "@/lib/config";
 
 const navLinks = [
   { href: "#about", label: "ABOUT" },
@@ -51,7 +52,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-3 group">
             <Image
-              src="/photos/logo.png"
+              src={img("/photos/logo.png")}
               alt="Reaper"
               width={140}
               height={40}
