@@ -5,7 +5,7 @@ import SectionHeading from "./ui/SectionHeading";
 import { CONTACT } from "@/lib/content";
 
 const INTERESTS = ["Kids (4–11)", "Teens (12–15)", "Adult Muay Thai", "Adult BJJ", "MMA", "Homeschool / School partnership"];
-const FIELD = "w-full bg-smoke/60 border border-bone/10 px-4 py-3 font-body text-base text-bone placeholder:text-bone/30 focus:outline-none focus:border-blood";
+const FIELD = "w-full bg-smoke/60 border border-bone/10 px-4 py-3 font-body text-base text-bone placeholder:text-bone/30 focus:outline-none focus:border-accent";
 
 // No backend on GitHub Pages: the form composes an email to the gym.
 export default function Contact() {
@@ -42,7 +42,7 @@ export default function Contact() {
               ["Phone", CONTACT.phone],
             ].map(([k, v]) => (
               <div key={k}>
-                <dt className="font-heading font-bold text-xs tracking-[0.2em] text-blood uppercase">{k}</dt>
+                <dt className="font-heading font-bold text-xs tracking-[0.2em] text-accent uppercase">{k}</dt>
                 <dd className="mt-1 font-body text-lg text-bone/80 tracking-wide">{v}</dd>
               </div>
             ))}
@@ -60,8 +60,8 @@ export default function Contact() {
             </select>
           </label>
           <label className="block"><span className="sr-only">Message</span><textarea name="message" rows={4} placeholder="Ages, experience, questions…" className={FIELD} /></label>
-          {error && <p role="alert" className="font-body text-blood">{error}</p>}
-          <button type="submit" className="w-full font-heading font-bold text-base tracking-[0.15em] bg-blood text-bone px-10 py-4 uppercase hover:bg-blood/90 transition-colors">
+          {error && <p role="alert" className="font-body text-accent">{error}</p>}
+          <button type="submit" className="w-full font-heading font-bold text-base tracking-[0.15em] bg-accent text-bone px-10 py-4 uppercase hover:bg-accent/90 transition-colors">
             Book a Trial Class
           </button>
         </form>

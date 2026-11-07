@@ -11,7 +11,7 @@ export default function FAQ() {
             <details key={f.q} className="group py-6">
               <summary className="flex justify-between gap-6 cursor-pointer list-none font-heading font-bold text-xl md:text-2xl text-bone uppercase tracking-wide">
                 {f.q}
-                <span className="text-blood transition-transform group-open:rotate-45" aria-hidden>+</span>
+                <span className="text-accent transition-transform group-open:rotate-45" aria-hidden>+</span>
               </summary>
               <p className="mt-4 font-body text-lg text-bone/60 tracking-wide leading-relaxed">{f.a}</p>
             </details>

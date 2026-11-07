@@ -115,39 +115,47 @@ export const SAFETY_POINTS = [
 
 type ClassSlot = { time: string; name: string; group: "Kids" | "Teens" | "Adults" | "Advanced" };
 
-// Sample schedule — final times and start dates still to be confirmed.
+const MT_BAG = { time: "5:10 PM", name: "Muay Thai Bag Work · All Levels", group: "Adults" } as const;
+const CUBS = { time: "3:30 PM", name: "Reaper Cubs (4–6)", group: "Kids" } as const;
+const LITTLE = { time: "4:15 PM", name: "Little Reapers (7–11)", group: "Kids" } as const;
+const TEENS = { time: "5:10 PM", name: "Teens Muay Thai (12–15)", group: "Teens" } as const;
+
 export const SCHEDULE: { day: string; classes: ClassSlot[] }[] = [
-  { day: "Mon", classes: [
-    { time: "4:30 PM", name: "Reaper Cubs (4–6)", group: "Kids" },
-    { time: "5:15 PM", name: "Little Reapers (7–11)", group: "Kids" },
+  { day: "Monday", classes: [
+    { time: "7:00 AM", name: "MMA · All Levels", group: "Adults" }, CUBS, LITTLE, MT_BAG,
     { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
-    { time: "7:30 PM", name: "Beginner BJJ", group: "Adults" },
+    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
+    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
   ] },
-  { day: "Tue", classes: [
-    { time: "10:00 AM", name: "Homeschool Class", group: "Kids" },
-    { time: "5:15 PM", name: "Teen Program (12–15)", group: "Teens" },
-    { time: "6:15 PM", name: "BJJ — All Levels", group: "Adults" },
-    { time: "7:30 PM", name: "MMA", group: "Advanced" },
+  { day: "Tuesday", classes: [
+    LITTLE, TEENS,
+    { time: "6:15 PM", name: "MMA · All Levels", group: "Adults" },
+    { time: "7:20 PM", name: "Muay Thai · All Levels", group: "Adults" },
+    { time: "8:30 PM", name: "Advanced BJJ (No Gi)", group: "Advanced" },
   ] },
-  { day: "Wed", classes: [
-    { time: "4:30 PM", name: "Reaper Cubs (4–6)", group: "Kids" },
-    { time: "5:15 PM", name: "Little Reapers (7–11)", group: "Kids" },
-    { time: "6:15 PM", name: "Muay Thai — All Levels", group: "Adults" },
-    { time: "7:30 PM", name: "Beginner BJJ", group: "Adults" },
-  ] },
-  { day: "Thu", classes: [
-    { time: "10:00 AM", name: "Homeschool Class", group: "Kids" },
-    { time: "5:15 PM", name: "Teen Program (12–15)", group: "Teens" },
+  { day: "Wednesday", classes: [
+    { time: "7:00 AM", name: "BJJ · All Levels", group: "Adults" }, CUBS, LITTLE, MT_BAG,
     { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
-    { time: "7:30 PM", name: "Advanced / Competition", group: "Advanced" },
+    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
+    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
   ] },
-  { day: "Fri", classes: [
-    { time: "5:15 PM", name: "Little Reapers (7–11)", group: "Kids" },
-    { time: "6:15 PM", name: "Open Mat", group: "Adults" },
+  { day: "Thursday", classes: [
+    LITTLE, TEENS,
+    { time: "6:15 PM", name: "MMA · All Levels", group: "Adults" },
+    { time: "7:20 PM", name: "Muay Thai · All Levels", group: "Adults" },
+    { time: "8:30 PM", name: "Advanced BJJ (No Gi)", group: "Advanced" },
   ] },
-  { day: "Sat", classes: [
-    { time: "9:00 AM", name: "Family Class", group: "Kids" },
-    { time: "10:00 AM", name: "Muay Thai + BJJ Fundamentals", group: "Adults" },
+  { day: "Friday", classes: [
+    { time: "7:00 AM", name: "MMA · All Levels", group: "Adults" }, CUBS, MT_BAG,
+    { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
+    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
+    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
+  ] },
+  { day: "Saturday", classes: [
+    { time: "10:00 AM", name: "Kids Class · Competition Focus", group: "Kids" },
+    { time: "11:00 AM", name: "Open Muay Thai · All Levels", group: "Adults" },
+    { time: "12:00 PM", name: "Open BJJ · Members & Invite", group: "Adults" },
+    { time: "1:30 PM", name: "Women's Only BJJ (Gi) · Coming Soon", group: "Adults" },
   ] },
 ];
 

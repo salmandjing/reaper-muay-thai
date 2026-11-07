@@ -12,7 +12,7 @@ export default function Disciplines() {
           {DISCIPLINES.map((d, i) => (
             <AnimatedSection key={d.name} delay={i * 0.1} className="grid md:grid-cols-[1fr_2fr] gap-4 md:gap-12 py-10">
               <div>
-                <span className="font-heading text-xs tracking-[0.3em] text-blood uppercase">0{i + 1} · {d.tag}</span>
+                <span className="font-heading text-xs tracking-[0.3em] text-accent uppercase">0{i + 1} · {d.tag}</span>
                 <h3 className="mt-2 font-heading font-black text-4xl md:text-5xl text-bone uppercase tracking-tight">{d.name}</h3>
               </div>
               <p className="font-body text-lg text-bone/60 leading-relaxed tracking-wide self-center">{d.body}</p>

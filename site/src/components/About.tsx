@@ -24,7 +24,7 @@ export default function About() {
         <AnimatedSection delay={0.2} className="self-end space-y-4">
           {PILLARS.map((p, i) => (
             <div key={p} className="flex items-center gap-5 border-b border-bone/10 pb-4">
-              <span className="font-heading font-black text-4xl text-blood">0{i + 1}</span>
+              <span className="font-heading font-black text-4xl text-accent">0{i + 1}</span>
               <span className="font-heading font-bold text-2xl text-bone uppercase tracking-wide">{p}</span>
             </div>
           ))}

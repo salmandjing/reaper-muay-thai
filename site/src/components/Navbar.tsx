@@ -44,19 +44,19 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-charcoal/95 backdrop-blur-md border-b border-blood/20 py-3"
+            ? "bg-charcoal/95 backdrop-blur-md border-b border-accent/20 py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-3 group">
             <Image
-              src={img("/photos/logo.png")}
-              alt="Reaper"
-              width={140}
-              height={40}
+              src={img("/photos/logo-new.png")}
+              alt="Reaper HQ"
+              width={100}
+              height={136}
               className={`transition-all duration-500 ${
-                scrolled ? "h-8 w-auto" : "h-10 w-auto"
+                scrolled ? "h-9 w-auto mix-blend-screen" : "h-12 w-auto mix-blend-screen"
               }`}
             />
           </a>
@@ -68,15 +68,15 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 
-                className="font-heading font-semibold text-sm tracking-[0.2em] text-bone/70 hover:text-blood transition-colors duration-300 relative group"
+                className="font-heading font-semibold text-sm tracking-[0.2em] text-bone/70 hover:text-accent transition-colors duration-300 relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-blood group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-4 font-heading font-bold text-sm tracking-[0.15em] bg-blood text-bone px-6 py-2.5 hover:bg-blood/80 transition-all duration-300 uppercase"
+              className="ml-4 font-heading font-bold text-sm tracking-[0.15em] bg-accent text-bone px-6 py-2.5 hover:bg-accent/80 transition-all duration-300 uppercase"
             >
               Book a Trial
             </a>
@@ -126,7 +126,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="font-heading font-bold text-3xl tracking-[0.2em] text-bone hover:text-blood transition-colors"
+                className="font-heading font-bold text-3xl tracking-[0.2em] text-bone hover:text-accent transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -137,7 +137,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.05 }}
-              className="mt-4 font-heading font-bold text-lg tracking-[0.15em] bg-blood text-bone px-10 py-4 hover:bg-blood/80 transition-all"
+              className="mt-4 font-heading font-bold text-lg tracking-[0.15em] bg-accent text-bone px-10 py-4 hover:bg-accent/80 transition-all"
             >
               START TRAINING
             </motion.a>

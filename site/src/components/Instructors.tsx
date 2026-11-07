@@ -28,7 +28,7 @@ export default function Instructors() {
               </div>
               <div>
                 <h3 className="font-heading font-black text-3xl text-bone uppercase tracking-tight">{c.name}</h3>
-                <p className="font-heading font-semibold text-xs tracking-[0.15em] text-blood uppercase mt-1">{c.role}</p>
+                <p className="font-heading font-semibold text-xs tracking-[0.15em] text-accent uppercase mt-1">{c.role}</p>
                 <ul className="mt-4 space-y-2">
                   {c.credentials.map((cr) => (
                     <li key={cr} className="font-body text-base text-bone/60 tracking-wide leading-snug">{cr}</li>

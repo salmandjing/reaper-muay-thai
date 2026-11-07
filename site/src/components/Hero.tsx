@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-charcoal/40" />
         {/* Blood accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-blood" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
       </div>
 
       {/* Content */}
@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="relative font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-[0.85] tracking-tight text-bone uppercase text-distressed"
         >
-          <span className="absolute inset-0 blur-[80px] bg-blood/20 -z-10 scale-150" />
+          <span className="absolute inset-0 blur-[80px] bg-accent/20 -z-10 scale-150" />
           REAPER HQ
         </motion.h1>
 
@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.7 }}
           className="mt-4 md:mt-6"
         >
-          <span className="font-heading font-bold text-base sm:text-xl md:text-2xl tracking-[0.2em] text-blood uppercase">
+          <span className="font-heading font-bold text-base sm:text-xl md:text-2xl tracking-[0.2em] text-accent uppercase">
             Martial Arts Academy &bull; Muay Thai &bull; Brazilian Jiu-Jitsu
           </span>
         </motion.div>
@@ -69,14 +69,14 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="group relative font-heading font-bold text-base tracking-[0.15em] bg-blood text-bone px-10 py-4 uppercase overflow-hidden transition-all duration-300 hover:bg-blood/90"
+            className="group relative font-heading font-bold text-base tracking-[0.15em] bg-accent text-bone px-10 py-4 uppercase overflow-hidden transition-all duration-300 hover:bg-accent/90"
           >
             <span className="relative z-10">Book a Trial Class</span>
             <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </a>
           <a
             href="#programs"
-            className="font-heading font-semibold text-base tracking-[0.15em] border-2 border-bone/30 text-bone/80 px-10 py-4 uppercase hover:border-blood hover:text-blood transition-all duration-300"
+            className="font-heading font-semibold text-base tracking-[0.15em] border-2 border-bone/30 text-bone/80 px-10 py-4 uppercase hover:border-accent hover:text-accent transition-all duration-300"
           >
             Explore Our Programs
           </a>
@@ -95,7 +95,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-[1px] h-8 bg-gradient-to-b from-blood to-transparent"
+            className="w-[1px] h-8 bg-gradient-to-b from-accent to-transparent"
           />
         </motion.div>
       </div>

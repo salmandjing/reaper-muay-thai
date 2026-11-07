@@ -38,7 +38,7 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <span className="font-heading font-semibold text-blood text-xs tracking-[0.4em] uppercase">
+          <span className="font-heading font-semibold text-accent text-xs tracking-[0.4em] uppercase">
             Inside The Gym
           </span>
           <h2 className="mt-4 font-heading font-black text-5xl md:text-7xl text-bone uppercase leading-[0.9] tracking-tight">
@@ -108,7 +108,7 @@ function GalleryLabel({ label, hasLink }: { label: string; hasLink: boolean }) {
       <span
         className={`font-heading font-bold text-xs tracking-[0.2em] text-bone/60 uppercase bg-charcoal/60 px-3 py-1.5 backdrop-blur-sm ${
           hasLink
-            ? "group-hover:text-blood group-hover:bg-charcoal/80 transition-all duration-300"
+            ? "group-hover:text-accent group-hover:bg-charcoal/80 transition-all duration-300"
             : ""
         }`}
       >

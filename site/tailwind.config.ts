@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         bone: "#e8e0d4",
-        blood: "#c41e1e",
+        accent: "#2f7bff",
         ash: "#1a1a1a",
         charcoal: "#0d0d0d",
         smoke: "#2a2a2a",
