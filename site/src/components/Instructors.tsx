@@ -3,87 +3,47 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { img } from "@/lib/config";
-import AnimatedSection from "./AnimatedSection";
-
-const instructors = [
-  {
-    name: "Coach Mike",
-    role: "Head Muay Thai Coach",
-    credentials: "Former Lumpinee Stadium Champion. 200+ fights. 15 years coaching.",
-    photo: "/photos/coach_mike.png",
-    objectPos: "object-[20%_15%]",
-  },
-  {
-    name: "Coach Danny",
-    role: "MMA Head Coach",
-    credentials: "Pro MMA record 18-3. Black belt in BJJ. UFC veteran.",
-    photo: "/photos/coach_danny.png",
-  },
-  {
-    name: "Coach Leticia",
-    role: "BJJ Head Instructor",
-    credentials: "3rd Degree Black Belt. IBJJF World Medalist. 12 years teaching.",
-    photo: "/photos/instructor-3.png",
-  },
-  {
-    name: "Coach Dmitri",
-    role: "Wrestling & Conditioning",
-    credentials: "NCAA Division I wrestler. Certified S&C coach. Fight team prep.",
-    photo: "/photos/instructor-4.png",
-  },
-];
+import SectionHeading from "./ui/SectionHeading";
+import { INSTRUCTORS, SAFETY_POINTS } from "@/lib/content";
 
 export default function Instructors() {
   return (
-    <section id="instructors" className="relative py-28 md:py-36 bg-ash">
+    <section id="instructors" className="relative py-28 md:py-36 bg-charcoal">
       <div className="max-w-7xl mx-auto px-6">
-        <AnimatedSection>
-          <span className="font-heading font-semibold text-blood text-xs tracking-[0.4em] uppercase">
-            Coaches
-          </span>
-          <h2 className="mt-4 font-heading font-black text-5xl md:text-7xl text-bone uppercase leading-[0.9] tracking-tight">
-            The Team
-          </h2>
-        </AnimatedSection>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {instructors.map((instructor, i) => (
-            <motion.div
-              key={instructor.name}
+        <SectionHeading eyebrow="Coaches" title="The Team" />
+        <div className="grid md:grid-cols-2 gap-10 mt-16">
+          {INSTRUCTORS.map((c, i) => (
+            <motion.article
+              key={c.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              className="group"
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group grid grid-cols-[2fr_3fr] gap-6 items-end"
             >
-              <div className="relative aspect-[3/4] bg-smoke/50 border border-bone/5 overflow-hidden group-hover:border-blood/30 transition-all duration-500">
-                <Image
-                  src={img(instructor.photo)}
-                  alt={instructor.name}
-                  fill
-                  className={`object-cover ${instructor.objectPos ?? "object-top"} group-hover:scale-105 transition-transform duration-700`}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-charcoal/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-charcoal/40" />
+              <div className="relative aspect-[3/4] border border-bone/5 overflow-hidden">
+                <Image src={img(c.photo)} alt={c.name} fill sizes="(max-width: 768px) 40vw, 20vw"
+                  className={`object-cover ${c.objectPos} group-hover:scale-105 transition-transform duration-700`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent" />
               </div>
-
-              <div className="mt-4">
-                <h3 className="font-heading font-bold text-xl text-bone uppercase tracking-tight">
-                  {instructor.name}
-                </h3>
-                <p className="font-heading font-semibold text-xs tracking-[0.15em] text-blood/70 uppercase mt-1">
-                  {instructor.role}
-                </p>
-                <p className="font-body text-sm text-bone/50 leading-relaxed mt-3 tracking-wide">
-                  {instructor.credentials}
-                </p>
+              <div>
+                <h3 className="font-heading font-black text-3xl text-bone uppercase tracking-tight">{c.name}</h3>
+                <p className="font-heading font-semibold text-xs tracking-[0.15em] text-blood uppercase mt-1">{c.role}</p>
+                <ul className="mt-4 space-y-2">
+                  {c.credentials.map((cr) => (
+                    <li key={cr} className="font-body text-base text-bone/60 tracking-wide leading-snug">{cr}</li>
+                  ))}
+                </ul>
               </div>
-            </motion.div>
+            </motion.article>
+          ))}
+        </div>
+        <div className="mt-20 grid sm:grid-cols-3 gap-px bg-bone/10 border border-bone/10">
+          {SAFETY_POINTS.map((s) => (
+            <div key={s.title} className="bg-charcoal p-8">
+              <h3 className="font-heading font-bold text-xl text-bone uppercase tracking-wide">{s.title}</h3>
+              <p className="mt-2 font-body text-base text-bone/60 tracking-wide">{s.body}</p>
+            </div>
           ))}
         </div>
       </div>

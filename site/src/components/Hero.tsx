@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src={img("/photos/0517FD2D-6691-4F68-9FB6-302E4497222E.webp")}
-          alt="Reaper fighter in guard stance"
+          alt="Reaper HQ student training Muay Thai"
           fill
           priority
           className="object-cover object-[center_20%]"
@@ -33,10 +33,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="relative font-heading font-black text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.85] tracking-tight text-bone uppercase text-distressed"
+          className="relative font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-[0.85] tracking-tight text-bone uppercase text-distressed"
         >
           <span className="absolute inset-0 blur-[80px] bg-blood/20 -z-10 scale-150" />
-          REAPER
+          REAPER HQ
         </motion.h1>
 
         <motion.div
@@ -45,8 +45,8 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.7 }}
           className="mt-4 md:mt-6"
         >
-          <span className="font-heading font-bold text-xl sm:text-2xl md:text-3xl tracking-[0.3em] text-blood uppercase">
-            Muay Thai &bull; MMA &bull; BJJ
+          <span className="font-heading font-bold text-base sm:text-xl md:text-2xl tracking-[0.2em] text-blood uppercase">
+            Martial Arts Academy &bull; Muay Thai &bull; Brazilian Jiu-Jitsu
           </span>
         </motion.div>
 
@@ -57,7 +57,7 @@ export default function Hero() {
           className="mt-6 md:mt-8 max-w-xl"
         >
           <p className="font-body text-lg md:text-xl text-bone/70 leading-relaxed tracking-wide">
-            No shortcuts. No excuses. Step in and earn every round.
+            <strong className="block font-heading text-2xl md:text-3xl text-bone uppercase tracking-wide mb-3">Build confidence. Develop discipline. Find your strength.</strong>Muay Thai, Brazilian Jiu-Jitsu, and MMA for kids, teens, and adults in West Palm Beach — from complete beginners to experienced athletes.
           </p>
         </motion.div>
 
@@ -71,14 +71,14 @@ export default function Hero() {
             href="#contact"
             className="group relative font-heading font-bold text-base tracking-[0.15em] bg-blood text-bone px-10 py-4 uppercase overflow-hidden transition-all duration-300 hover:bg-blood/90"
           >
-            <span className="relative z-10">Start Training</span>
+            <span className="relative z-10">Book a Trial Class</span>
             <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </a>
           <a
             href="#programs"
             className="font-heading font-semibold text-base tracking-[0.15em] border-2 border-bone/30 text-bone/80 px-10 py-4 uppercase hover:border-blood hover:text-blood transition-all duration-300"
           >
-            View Programs
+            Explore Our Programs
           </a>
         </motion.div>
 

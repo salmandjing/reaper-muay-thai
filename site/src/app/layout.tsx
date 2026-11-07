@@ -28,13 +28,13 @@ const bodyFont = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "REAPER | Muay Thai / MMA / BJJ",
+  title: "Reaper HQ | Muay Thai & Brazilian Jiu-Jitsu in West Palm Beach, FL",
   description:
-    "No shortcuts. No excuses. Step into Reaper and earn every round.",
+    "Community-focused martial arts academy in West Palm Beach. Kids martial arts, beginner Muay Thai, adult BJJ, MMA, and homeschool PE. Book a trial class.",
   openGraph: {
-    title: "REAPER | Muay Thai / MMA / BJJ",
+    title: "Reaper HQ | Muay Thai & Brazilian Jiu-Jitsu in West Palm Beach, FL",
     description:
-      "No shortcuts. No excuses. Step into Reaper and earn every round.",
+      "Community-focused martial arts academy in West Palm Beach. Kids martial arts, beginner Muay Thai, adult BJJ, MMA, and homeschool PE. Book a trial class.",
     type: "website",
   },
 };

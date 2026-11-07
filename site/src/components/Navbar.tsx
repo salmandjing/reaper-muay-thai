@@ -9,11 +9,10 @@ const navLinks = [
   { href: "#about", label: "ABOUT" },
   { href: "#programs", label: "PROGRAMS" },
   { href: "#schedule", label: "SCHEDULE" },
-  { href: "#instructors", label: "TEAM" },
-  { href: "#gallery", label: "GALLERY" },
+  { href: "#instructors", label: "COACHES" },
+  { href: "#homeschool", label: "HOMESCHOOL" },
   { href: "#pricing", label: "PRICING" },
-  { href: "https://reapermuaythai.com", label: "SHOP", external: true },
-  { href: "#contact", label: "JOIN" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -68,7 +67,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                
                 className="font-heading font-semibold text-sm tracking-[0.2em] text-bone/70 hover:text-blood transition-colors duration-300 relative group"
               >
                 {link.label}
@@ -79,7 +78,7 @@ export default function Navbar() {
               href="#contact"
               className="ml-4 font-heading font-bold text-sm tracking-[0.15em] bg-blood text-bone px-6 py-2.5 hover:bg-blood/80 transition-all duration-300 uppercase"
             >
-              Start Training
+              Book a Trial
             </a>
           </div>
 
@@ -122,7 +121,7 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

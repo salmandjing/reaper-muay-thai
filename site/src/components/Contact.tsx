@@ -1,174 +1,70 @@
 "use client";
 
-import { motion } from "framer-motion";
-import AnimatedSection from "./AnimatedSection";
+import { FormEvent, useState } from "react";
+import SectionHeading from "./ui/SectionHeading";
+import { CONTACT } from "@/lib/content";
 
+const INTERESTS = ["Kids (4–11)", "Teens (12–15)", "Adult Muay Thai", "Adult BJJ", "MMA", "Homeschool / School partnership"];
+const FIELD = "w-full bg-smoke/60 border border-bone/10 px-4 py-3 font-body text-base text-bone placeholder:text-bone/30 focus:outline-none focus:border-blood";
+
+// No backend on GitHub Pages: the form composes an email to the gym.
 export default function Contact() {
+  const [error, setError] = useState("");
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
+      setError("Please enter your name and a valid email.");
+      return;
+    }
+    setError("");
+    const body = [
+      `Name: ${name}`, `Email: ${email}`, `Phone: ${data.get("phone") ?? ""}`,
+      `Interested in: ${data.get("interest") ?? ""}`, "", String(data.get("message") ?? ""),
+    ].join("\n");
+    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent("Trial Class Request — " + name)}&body=${encodeURIComponent(body)}`;
+  }
+
   return (
     <section id="contact" className="relative py-28 md:py-36 bg-charcoal">
       <div className="absolute top-0 left-0 right-0 section-divider" />
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left: info */}
-          <AnimatedSection>
-            <span className="font-heading font-semibold text-blood text-xs tracking-[0.4em] uppercase">
-              Join Us
-            </span>
-            <h2 className="mt-4 font-heading font-black text-5xl md:text-7xl text-bone uppercase leading-[0.9] tracking-tight">
-              Start
-              <br />
-              Training.
-            </h2>
-
-            <p className="mt-6 font-body text-lg text-bone/60 leading-relaxed tracking-wide max-w-md">
-              Walk in. Try a class. Decide if this is where you belong. First
-              session is free &mdash; no pressure, no pitch.
-            </p>
-
-            <div className="mt-12 space-y-8">
-              {/* Address */}
-              <div>
-                <h3 className="font-heading font-bold text-xs tracking-[0.2em] text-blood/70 uppercase">
-                  Location
-                </h3>
-                <p className="font-body text-base text-bone/70 mt-2 tracking-wide leading-relaxed">
-                  1247 Industrial Blvd, Unit 4
-                  <br />
-                  Austin, TX 78702
-                </p>
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div>
+          <SectionHeading eyebrow="Get started" title="Book A Trial Class"
+            intro="Tell us who's training and what you're interested in. We'll get back to you to schedule your first class." />
+          <dl className="mt-12 space-y-6">
+            {[
+              ["Location", `${CONTACT.city} — ${CONTACT.addressNote}`],
+              ["Email", CONTACT.email],
+              ["Phone", CONTACT.phone],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <dt className="font-heading font-bold text-xs tracking-[0.2em] text-blood uppercase">{k}</dt>
+                <dd className="mt-1 font-body text-lg text-bone/80 tracking-wide">{v}</dd>
               </div>
-
-              {/* Hours */}
-              <div>
-                <h3 className="font-heading font-bold text-xs tracking-[0.2em] text-blood/70 uppercase">
-                  Hours
-                </h3>
-                <div className="mt-2 space-y-1">
-                  {[
-                    { day: "Mon - Fri", hours: "6:00 AM - 9:00 PM" },
-                    { day: "Saturday", hours: "8:00 AM - 2:00 PM" },
-                    { day: "Sunday", hours: "Closed" },
-                  ].map((item) => (
-                    <div key={item.day} className="flex justify-between max-w-xs">
-                      <span className="font-body text-sm text-bone/50 tracking-wide">
-                        {item.day}
-                      </span>
-                      <span className="font-heading font-semibold text-sm text-bone/70 tracking-wide">
-                        {item.hours}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <h3 className="font-heading font-bold text-xs tracking-[0.2em] text-blood/70 uppercase">
-                  Contact
-                </h3>
-                <div className="mt-2 space-y-1">
-                  <p className="font-body text-base text-bone/70 tracking-wide">
-                    info@reapermuaythai.com
-                  </p>
-                  <p className="font-body text-base text-bone/70 tracking-wide">
-                    (512) 555-0147
-                  </p>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Right: form */}
-          <AnimatedSection delay={0.2}>
-            <div className="bg-smoke/30 border border-bone/5 p-8 md:p-10">
-              <h3 className="font-heading font-bold text-2xl text-bone uppercase tracking-tight">
-                Send a Message
-              </h3>
-              <p className="font-body text-sm text-bone/40 tracking-wide mt-2">
-                Or just walk in. We prefer it that way.
-              </p>
-
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="mt-8 space-y-6"
-              >
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="font-heading font-semibold text-xs tracking-[0.15em] text-bone/50 uppercase block mb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your name"
-                    className="w-full bg-charcoal border border-bone/10 text-bone font-body text-base tracking-wide px-4 py-3 focus:outline-none focus:border-blood/50 transition-colors placeholder:text-bone/20"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="font-heading font-semibold text-xs tracking-[0.15em] text-bone/50 uppercase block mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="your@email.com"
-                    className="w-full bg-charcoal border border-bone/10 text-bone font-body text-base tracking-wide px-4 py-3 focus:outline-none focus:border-blood/50 transition-colors placeholder:text-bone/20"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="interest"
-                    className="font-heading font-semibold text-xs tracking-[0.15em] text-bone/50 uppercase block mb-2"
-                  >
-                    Interest
-                  </label>
-                  <select
-                    id="interest"
-                    className="w-full bg-charcoal border border-bone/10 text-bone/70 font-body text-base tracking-wide px-4 py-3 focus:outline-none focus:border-blood/50 transition-colors appearance-none"
-                  >
-                    <option value="">Select a program</option>
-                    <option value="muay-thai">Muay Thai</option>
-                    <option value="mma">MMA</option>
-                    <option value="bjj">Brazilian Jiu-Jitsu</option>
-                    <option value="all">Everything</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="font-heading font-semibold text-xs tracking-[0.15em] text-bone/50 uppercase block mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Tell us about your experience level and goals..."
-                    className="w-full bg-charcoal border border-bone/10 text-bone font-body text-base tracking-wide px-4 py-3 focus:outline-none focus:border-blood/50 transition-colors placeholder:text-bone/20 resize-none"
-                  />
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full font-heading font-bold text-base tracking-[0.15em] bg-blood text-bone py-4 uppercase hover:bg-blood/80 transition-colors duration-300"
-                >
-                  Send Message
-                </motion.button>
-              </form>
-            </div>
-          </AnimatedSection>
+            ))}
+          </dl>
+          <iframe title="Map of West Palm Beach" loading="lazy" className="mt-10 w-full h-64 border border-bone/10 grayscale invert-[0.9]"
+            src="https://maps.google.com/maps?q=West%20Palm%20Beach%2C%20FL&z=12&output=embed" />
         </div>
+        <form onSubmit={handleSubmit} noValidate className="space-y-4 self-start bg-ash border border-bone/10 p-8 md:p-10">
+          <label className="block"><span className="sr-only">Name</span><input name="name" required placeholder="Name *" className={FIELD} /></label>
+          <label className="block"><span className="sr-only">Email</span><input name="email" type="email" required placeholder="Email *" className={FIELD} /></label>
+          <label className="block"><span className="sr-only">Phone</span><input name="phone" type="tel" placeholder="Phone" className={FIELD} /></label>
+          <label className="block"><span className="sr-only">Interest</span>
+            <select name="interest" className={FIELD} defaultValue={INTERESTS[0]}>
+              {INTERESTS.map((i) => <option key={i}>{i}</option>)}
+            </select>
+          </label>
+          <label className="block"><span className="sr-only">Message</span><textarea name="message" rows={4} placeholder="Ages, experience, questions…" className={FIELD} /></label>
+          {error && <p role="alert" className="font-body text-blood">{error}</p>}
+          <button type="submit" className="w-full font-heading font-bold text-base tracking-[0.15em] bg-blood text-bone px-10 py-4 uppercase hover:bg-blood/90 transition-colors">
+            Book a Trial Class
+          </button>
+        </form>
       </div>
     </section>
   );
