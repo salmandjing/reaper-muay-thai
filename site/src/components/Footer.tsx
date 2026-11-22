@@ -3,8 +3,9 @@ import { img } from "@/lib/config";
 import { CONTACT } from "@/lib/content";
 
 const LINKS = [
-  ["Programs", "#programs"], ["Schedule", "#schedule"], ["Coaches", "#instructors"],
-  ["Homeschool", "#homeschool"], ["Pricing", "#pricing"], ["Book a Trial", "#contact"],
+  ["Programs", "#programs"], ["Schedule", "#schedule"], ["Pricing", "#pricing"],
+  ["Coaches", "#instructors"], ["Gallery", "#gallery"], ["Homeschool", "#homeschool"],
+  ["FAQ", "#faq"], ["Book a Trial", "#contact"],
 ];
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
     <footer className="relative bg-charcoal border-t border-bone/5">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
         <div>
-          <Image src={img("/photos/logo-new.png")} alt="Reaper HQ logo" width={100} height={136} className="h-16 w-auto mix-blend-screen" />
+          <Image src={img("/photos/logo-new.png")} alt="Reaper HQ logo" width={100} height={136} className="h-16 w-auto" />
           <p className="font-body text-sm text-bone/40 tracking-wide mt-4 max-w-xs leading-relaxed">
             Reaper HQ Martial Arts Academy — Muay Thai &amp; Brazilian Jiu-Jitsu in {CONTACT.city}.
           </p>
@@ -23,6 +24,7 @@ export default function Footer() {
           ))}
         </nav>
         <div className="space-y-2 font-body text-sm text-bone/50 tracking-wide">
+          <p>{CONTACT.street}<br />{CONTACT.city} {CONTACT.zip}</p>
           <p>{CONTACT.email}</p>
           <div className="flex gap-4 pt-2">
             <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">Instagram</a>

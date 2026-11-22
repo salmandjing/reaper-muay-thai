@@ -42,17 +42,7 @@ export default function Instructors() {
               <div>
                 <h3 className="font-heading font-black text-3xl text-bone uppercase tracking-tight">{c.name}</h3>
                 <p className="font-heading font-semibold text-xs tracking-[0.15em] text-accent uppercase mt-1">{c.role}</p>
-                {c.bio && <p className="mt-4 font-body text-base text-bone/70 tracking-wide leading-relaxed">{c.bio}</p>}
-                {c.credentials.length > 0 && (
-                  <ul className="mt-4 space-y-2">
-                    {c.credentials.map((cr) => (
-                      <li key={cr} className="flex gap-3 font-body text-base text-bone/70 tracking-wide leading-snug">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-accent" aria-hidden />
-                        {cr}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <p className="mt-4 font-body text-base text-bone/70 tracking-wide leading-relaxed">{c.bio}</p>
               </div>
             </motion.article>
           ))}

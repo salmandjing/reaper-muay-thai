@@ -3,7 +3,7 @@ import { PLANS } from "@/lib/content";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-28 md:py-36 bg-charcoal">
+    <section id="pricing" className="relative py-28 md:py-36 bg-ash">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading eyebrow="Memberships" title="Pricing"
           intro="Estimated monthly rates. Final pricing, family memberships, and terms will be confirmed at enrollment." />

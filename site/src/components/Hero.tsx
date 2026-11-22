@@ -29,6 +29,16 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 md:pb-28 w-full">
+        <motion.a
+          href="#schedule"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="group mb-6 inline-flex items-center gap-3 border border-accent/60 bg-charcoal/60 backdrop-blur-sm px-4 py-2 font-heading font-bold text-xs sm:text-sm tracking-[0.2em] text-bone uppercase hover:bg-accent transition-colors"
+        >
+          <span className="h-2 w-2 rounded-full bg-accent group-hover:bg-bone animate-pulse" aria-hidden />
+          Soft opening · All levels welcome
+        </motion.a>
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}

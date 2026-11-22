@@ -6,12 +6,12 @@ import Image from "next/image";
 import { img } from "@/lib/config";
 
 const navLinks = [
-  { href: "#about", label: "ABOUT" },
   { href: "#programs", label: "PROGRAMS" },
   { href: "#schedule", label: "SCHEDULE" },
-  { href: "#instructors", label: "COACHES" },
-  { href: "#homeschool", label: "HOMESCHOOL" },
   { href: "#pricing", label: "PRICING" },
+  { href: "#instructors", label: "COACHES" },
+  { href: "#gallery", label: "GALLERY" },
+  { href: "#homeschool", label: "HOMESCHOOL" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -56,7 +56,7 @@ export default function Navbar() {
               width={100}
               height={136}
               className={`transition-all duration-500 ${
-                scrolled ? "h-9 w-auto mix-blend-screen" : "h-12 w-auto mix-blend-screen"
+                scrolled ? "h-9 w-auto" : "h-12 w-auto"
               }`}
             />
           </a>

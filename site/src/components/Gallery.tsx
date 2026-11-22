@@ -5,7 +5,7 @@ import { GALLERY } from "@/lib/content";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="relative py-28 md:py-36 bg-charcoal">
+    <section id="gallery" className="relative py-28 md:py-36 bg-ash">
       <div className="absolute top-0 left-0 right-0 section-divider" />
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading eyebrow="Inside the gym" title="Gallery"

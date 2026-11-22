@@ -37,7 +37,7 @@ export default function Contact() {
             intro="Tell us who's training and what you're interested in. We'll get back to you to schedule your first class." />
           <dl className="mt-12 space-y-6">
             {[
-              ["Location", `${CONTACT.city} — ${CONTACT.addressNote}`],
+              ["Location", `${CONTACT.street}, ${CONTACT.city} ${CONTACT.zip}`],
               ["Email", CONTACT.email],
               ["Phone", CONTACT.phone],
             ].map(([k, v]) => (
@@ -47,8 +47,13 @@ export default function Contact() {
               </div>
             ))}
           </dl>
-          <iframe title="Map of West Palm Beach" loading="lazy" className="mt-10 w-full h-64 border border-bone/10 grayscale invert-[0.9]"
-            src="https://maps.google.com/maps?q=West%20Palm%20Beach%2C%20FL&z=12&output=embed" />
+          <iframe title="Map to Reaper HQ" loading="lazy" className="mt-10 w-full h-64 border border-bone/10 grayscale invert-[0.9]"
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.mapQuery)}&z=15&output=embed`} />
+          <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONTACT.mapQuery)}`}
+            target="_blank" rel="noopener noreferrer"
+            className="mt-4 inline-block font-heading font-semibold text-sm tracking-[0.2em] uppercase text-accent hover:text-bone transition-colors">
+            Get directions &rarr;
+          </a>
         </div>
         <form onSubmit={handleSubmit} noValidate className="space-y-4 self-start bg-ash border border-bone/10 p-8 md:p-10">
           <label className="block"><span className="sr-only">Name</span><input name="name" required placeholder="Name *" className={FIELD} /></label>

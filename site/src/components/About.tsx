@@ -5,7 +5,7 @@ const PILLARS = ["Legitimate martial arts", "Welcoming to everyone", "Built arou
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 md:py-36 bg-charcoal">
+    <section id="about" className="relative py-28 md:py-36 bg-ash">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-24">
         <div>
           <SectionHeading eyebrow="About Reaper HQ" title="You Don't Need To Be A Fighter" />

@@ -1,7 +1,9 @@
-// Placeholder contact details until the lease and business accounts are finalized.
+// Email, phone, and socials are placeholders until the business accounts are finalized.
 export const CONTACT = {
+  street: "5033B Okeechobee Blvd",
   city: "West Palm Beach, FL",
-  addressNote: "Exact address announced soon",
+  zip: "33417",
+  mapQuery: "5033B Okeechobee Blvd, West Palm Beach, FL 33417",
   email: "info@reaperhq.com",
   phone: "Coming soon",
   instagram: "https://instagram.com/",
@@ -90,8 +92,7 @@ type Instructor = {
   role: string;
   // Transparent cutouts sit on a backdrop; regular photos fill the frame.
   photo: { src: string; cutout?: boolean; hoverSrc?: string; objectPos?: string };
-  bio?: string;
-  credentials: string[];
+  bio: string;
 };
 
 export const INSTRUCTORS: Instructor[] = [
@@ -99,19 +100,13 @@ export const INSTRUCTORS: Instructor[] = [
     name: "Michael Rodriguez",
     role: "Brazilian Jiu-Jitsu · MMA",
     photo: { src: "/photos/mike2.png", hoverSrc: "/photos/mike.png", cutout: true },
-    credentials: [
-      "Brazilian Jiu-Jitsu black belt — six years at black belt",
-      "Professional MMA experience",
-      "Wrestling background",
-      "Experienced teaching children's martial arts",
-    ],
+    bio: "Michael is a Brazilian Jiu-Jitsu black belt with six years at the rank and professional MMA experience. He also brings a wrestling background and experience teaching children's martial arts, so beginners, kids, and experienced athletes all get coaching built for where they are.",
   },
   {
     name: "Danny Tarantino",
     role: "Co-Owner · Muay Thai Coach",
     photo: { src: "/photos/coach_danny.png", objectPos: "object-top" },
     bio: "Danny is the co-owner and Muay Thai coach at Reaper Headquarters. He started martial arts as a kid, and it gave him structure, discipline, and grounding throughout his life. He brings that experience to his coaching, focusing on fundamentals, safety, and steady progress through hard, structured training in a family-friendly gym where everyone feels welcome and supported.",
-    credentials: [],
   },
 ];
 
@@ -121,49 +116,21 @@ export const SAFETY_POINTS = [
   { title: "Clear progression", body: "Beginners start with fundamentals and advance when they're ready." },
 ];
 
-type ClassSlot = { time: string; name: string; group: "Kids" | "Teens" | "Adults" | "Advanced" };
-
-const MT_BAG = { time: "5:10 PM", name: "Muay Thai Bag Work · All Levels", group: "Adults" } as const;
-const CUBS = { time: "3:30 PM", name: "Reaper Cubs (4–6)", group: "Kids" } as const;
-const LITTLE = { time: "4:15 PM", name: "Little Reapers (7–11)", group: "Kids" } as const;
-const TEENS = { time: "5:10 PM", name: "Teens Muay Thai (12–15)", group: "Teens" } as const;
-
-export const SCHEDULE: { day: string; classes: ClassSlot[] }[] = [
-  { day: "Monday", classes: [
-    { time: "7:00 AM", name: "MMA · All Levels", group: "Adults" }, CUBS, LITTLE, MT_BAG,
-    { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
-    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
-    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
+// Soft-opening schedule (from the gym's flyer). Kids and teen classes are not on it yet.
+export const SCHEDULE: { days: string; classes: { time: string; name: string }[] }[] = [
+  { days: "Mon · Wed · Fri", classes: [
+    { time: "7:00 – 8:00 AM", name: "MMA" },
+    { time: "6:00 – 7:15 PM", name: "BJJ (Gi)" },
+    { time: "7:30 – 8:45 PM", name: "Muay Thai" },
   ] },
-  { day: "Tuesday", classes: [
-    LITTLE, TEENS,
-    { time: "6:15 PM", name: "MMA · All Levels", group: "Adults" },
-    { time: "7:20 PM", name: "Muay Thai · All Levels", group: "Adults" },
-    { time: "8:30 PM", name: "Advanced BJJ (No Gi)", group: "Advanced" },
+  { days: "Tue · Thu", classes: [
+    { time: "6:00 – 7:15 PM", name: "Muay Thai" },
+    { time: "7:30 – 8:45 PM", name: "BJJ (No-Gi)" },
   ] },
-  { day: "Wednesday", classes: [
-    { time: "7:00 AM", name: "BJJ · All Levels", group: "Adults" }, CUBS, LITTLE, MT_BAG,
-    { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
-    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
-    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
-  ] },
-  { day: "Thursday", classes: [
-    LITTLE, TEENS,
-    { time: "6:15 PM", name: "MMA · All Levels", group: "Adults" },
-    { time: "7:20 PM", name: "Muay Thai · All Levels", group: "Adults" },
-    { time: "8:30 PM", name: "Advanced BJJ (No Gi)", group: "Advanced" },
-  ] },
-  { day: "Friday", classes: [
-    { time: "7:00 AM", name: "MMA · All Levels", group: "Adults" }, CUBS, MT_BAG,
-    { time: "6:15 PM", name: "Beginner Muay Thai", group: "Adults" },
-    { time: "7:20 PM", name: "Beginner BJJ", group: "Adults" },
-    { time: "8:30 PM", name: "Advanced Muay Thai", group: "Advanced" },
-  ] },
-  { day: "Saturday", classes: [
-    { time: "10:00 AM", name: "Kids Class · Competition Focus", group: "Kids" },
-    { time: "11:00 AM", name: "Open Muay Thai · All Levels", group: "Adults" },
-    { time: "12:00 PM", name: "Open BJJ · Members & Invite", group: "Adults" },
-    { time: "1:30 PM", name: "Women's Only BJJ (Gi) · Coming Soon", group: "Adults" },
+  { days: "Saturday", classes: [
+    { time: "10:00 AM", name: "Open Mat – Sparring" },
+    { time: "11:30 AM", name: "BJJ Open Mat" },
+    { time: "1:00 PM", name: "Women's Only Gi Class" },
   ] },
 ];
 

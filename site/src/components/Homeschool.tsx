@@ -4,7 +4,7 @@ import { HOMESCHOOL_OFFERINGS } from "@/lib/content";
 
 export default function Homeschool() {
   return (
-    <section id="homeschool" className="relative py-28 md:py-36 bg-ash">
+    <section id="homeschool" className="relative py-28 md:py-36 bg-charcoal">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
         <SectionHeading
           eyebrow="Homeschool & community"
