@@ -85,25 +85,33 @@ export const HOMESCHOOL_OFFERINGS = [
   "School enrichment and after-school partnerships, as available",
 ];
 
-export const INSTRUCTORS = [
+type Instructor = {
+  name: string;
+  role: string;
+  // Transparent cutouts sit on a backdrop; regular photos fill the frame.
+  photo: { src: string; cutout?: boolean; hoverSrc?: string; objectPos?: string };
+  bio?: string;
+  credentials: string[];
+};
+
+export const INSTRUCTORS: Instructor[] = [
   {
     name: "Michael Rodriguez",
     role: "Brazilian Jiu-Jitsu · MMA",
-    photo: "/photos/coach_mike.png",
-    objectPos: "object-[20%_15%]",
+    photo: { src: "/photos/mike2.png", hoverSrc: "/photos/mike.png", cutout: true },
     credentials: [
-      "Brazilian Jiu-Jitsu black belt — five years at black belt",
-      "Wrestling background",
+      "Brazilian Jiu-Jitsu black belt — six years at black belt",
       "Professional MMA experience",
+      "Wrestling background",
       "Experienced teaching children's martial arts",
     ],
   },
   {
     name: "Danny Tarantino",
-    role: "Instructor",
-    photo: "/photos/coach_danny.png",
-    objectPos: "object-top",
-    credentials: ["Full bio and credentials coming soon"],
+    role: "Co-Owner · Muay Thai Coach",
+    photo: { src: "/photos/coach_danny.png", objectPos: "object-top" },
+    bio: "Danny is the co-owner and Muay Thai coach at Reaper Headquarters. He started martial arts as a kid, and it gave him structure, discipline, and grounding throughout his life. He brings that experience to his coaching, focusing on fundamentals, safety, and steady progress through hard, structured training in a family-friendly gym where everyone feels welcome and supported.",
+    credentials: [],
   },
 ];
 
@@ -173,4 +181,26 @@ export const FAQS = [
   { q: "What should I bring to a trial class?", a: "Comfortable athletic clothes, water, and a good attitude. We'll help with anything else you need." },
   { q: "Are there family or service discounts?", a: "We're planning family memberships and discounts for veterans, active military, paramedics, and law enforcement. Ask us for details." },
   { q: "Do you accept Step Up scholarships?", a: "We are exploring Florida Step Up participation, but we cannot confirm provider status or eligibility yet. Contact us to stay updated." },
+];
+
+// Real class photos, ordered for a balanced Muay Thai / BJJ mix. Dimensions match the files.
+export const GALLERY: { src: string; alt: string; w: number; h: number }[] = [
+  { src: "01.jpg", alt: "Student throwing a roundhouse kick into a coach's Thai pads", w: 1000, h: 978 },
+  { src: "02.jpg", alt: "Coach supervising students during a no-gi BJJ drill", w: 1000, h: 1000 },
+  { src: "03.jpg", alt: "Students grappling on the mats beside the heavy bags", w: 1000, h: 997 },
+  { src: "04.jpg", alt: "Student landing a jab on a coach's pads", w: 1000, h: 999 },
+  { src: "05.jpg", alt: "Two students working grips in a grappling drill", w: 1000, h: 1000 },
+  { src: "06.jpg", alt: "Students rolling during a no-gi BJJ class", w: 1000, h: 666 },
+  { src: "07.jpg", alt: "Smiling student crouched on the mats", w: 760, h: 1000 },
+  { src: "08.jpg", alt: "Two students drilling a BJJ position", w: 999, h: 1000 },
+  { src: "09.jpg", alt: "Student throwing a kick during pad work", w: 1000, h: 958 },
+  { src: "10.jpg", alt: "Muay Thai pad work as a coach looks on", w: 913, h: 1000 },
+  { src: "11.jpg", alt: "Coach holding pads for a student's punch", w: 1000, h: 710 },
+  { src: "12.jpg", alt: "Class gathered around a technique demonstration", w: 1000, h: 693 },
+  { src: "13.jpg", alt: "Two students drilling a grappling position", w: 1000, h: 1000 },
+  { src: "14.jpg", alt: "Coach giving instruction during a grappling drill", w: 1000, h: 666 },
+  { src: "15.jpg", alt: "Student throwing a jab during pad work", w: 1000, h: 1000 },
+  { src: "16.jpg", alt: "Students drilling Brazilian Jiu-Jitsu with a partner", w: 1000, h: 710 },
+  { src: "17.jpg", alt: "Partners practicing guard work by the heavy bags", w: 1000, h: 885 },
+  { src: "18.jpg", alt: "Students and coaches watching a live roll", w: 1000, h: 650 },
 ];
