@@ -157,7 +157,6 @@ export const GALLERY: { src: string; alt: string; w: number; h: number }[] = [
   { src: "03.jpg", alt: "Students grappling on the mats beside the heavy bags", w: 1000, h: 997 },
   { src: "04.jpg", alt: "Student landing a jab on a coach's pads", w: 1000, h: 999 },
   { src: "05.jpg", alt: "Two students working grips in a grappling drill", w: 1000, h: 1000 },
-  { src: "06.jpg", alt: "Students rolling during a no-gi BJJ class", w: 1000, h: 666 },
   { src: "07.jpg", alt: "Smiling student crouched on the mats", w: 760, h: 1000 },
   { src: "08.jpg", alt: "Two students drilling a BJJ position", w: 999, h: 1000 },
   { src: "09.jpg", alt: "Student throwing a kick during pad work", w: 1000, h: 958 },
